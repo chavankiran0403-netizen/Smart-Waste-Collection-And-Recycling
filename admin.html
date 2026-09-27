@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartWaste Admin Dashboard</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5fff7;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            box-sizing: border-box;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+
+        }
+
+        button {
+
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            background-color: #1b5e20;
+        }
+
+        #result {
+
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            display: none;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>♻️ SmartWaste Admin Dashboard</h1>
+
+        <h2>Update Request Status</h2>
+
+
+        <label>Request ID</label>
+
+        <input
+            type="text"
+            id="requestId"
+            placeholder="Enter Request ID"
+        >
+
+
+        <label>Select Status</label>
+
+        <select id="status">
+
+            <option value="">-- Select Status --</option>
+
+            <option value="Pending">Pending</option>
+
+            <option value="Approved">Approved</option>
+
+            <option value="Collected">Collected</option>
+
+            <option value="Completed">Completed</option>
+
+            <option value="Rejected">Rejected</option>
+
+        </select>
+
+
+        <button onclick="updateStatus()">
+            Update Status
+        </button>
+
+
+        <div id="result"></div>
+
+    </div>
+
+
+    <script>
+
+        function updateStatus() {
+
+            var requestId =
+                document.getElementById("requestId").value.trim();
+
+            var status =
+                document.getElementById("status").value;
+
+            var result =
+                document.getElementById("result");
+
+
+            if (requestId === "") {
+
+                result.style.display = "block";
+
+                result.innerHTML =
+                    "Please enter Request ID.";
+
+                return;
+
+            }
+
+
+            if (status === "") {
+
+                result.style.display = "block";
+
+                result.innerHTML =
+                    "Please select Status.";
+
+                return;
+
+            }
+
+
+            // Save status
+            localStorage.setItem(
+                "status_" + requestId,
+                status
+            );
+
+
+            result.style.display = "block";
+
+            result.innerHTML =
+                "✅ Status Updated Successfully!<br><br>" +
+                "<b>Request ID:</b> " + requestId +
+                "<br><br>" +
+                "<b>Status:</b> " + status;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

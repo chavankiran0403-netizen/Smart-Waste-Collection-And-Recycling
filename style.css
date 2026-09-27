@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5fff7;
+    color: #173b24;
+}
+
+nav {
+    padding: 20px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #173b24;
+}
+
+.hero {
+    padding: 80px 10%;
+    background: #e9f8ed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 45px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+button {
+    padding: 14px 25px;
+    background: #218838;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.hero-icon {
+    font-size: 150px;
+}
+
+.services {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #ddd;
+}
+
+.card div {
+    font-size: 45px;
+}
+
+.request-section {
+    padding: 60px 20px;
+    background: #e9f8ed;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.track-section {
+    padding: 60px;
+    text-align: center;
+}
+
+footer {
+    padding: 25px;
+    background: #173b24;
+    color: white;
+    text-align: center;
+}

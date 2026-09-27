@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Waste Collection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">♻️ SmartWaste</div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#request">Request Pickup</a>
+            <a href="#track">Track</a>
+        </div>
+    </nav>
+
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Smart Waste Collection & Recycling
+            </h1>
+
+            <p>
+                Dispose your waste responsibly.
+                Request a pickup and help build a cleaner
+                and greener future.
+            </p>
+
+            <button onclick="scrollToRequest()">
+                Request Waste Pickup
+            </button>
+
+        </div>
+
+        <div class="hero-icon">
+            ♻️
+        </div>
+
+    </section>
+
+
+    <!-- Waste Categories -->
+    <section id="services" class="services">
+
+        <h2>Waste Categories</h2>
+
+        <p class="subtitle">
+            Choose the appropriate category for your waste.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div>🥬</div>
+                <h3>Organic Waste</h3>
+                <p>Food and biodegradable waste.</p>
+            </div>
+
+            <div class="card">
+                <div>♻️</div>
+                <h3>Plastic Waste</h3>
+                <p>Plastic bottles, containers and packaging.</p>
+            </div>
+
+            <div class="card">
+                <div>📄</div>
+                <h3>Paper Waste</h3>
+                <p>Paper, newspapers and cardboard.</p>
+            </div>
+
+            <div class="card">
+                <div>🔌</div>
+                <h3>E-Waste</h3>
+                <p>Electronic devices and accessories.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Waste Pickup Request -->
+    <section id="request" class="request-section">
+
+        <div class="form-container">
+
+            <h2>Request Waste Pickup</h2>
+
+            <form id="wasteForm">
+
+                <label>Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label>Mobile Number</label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="Enter mobile number"
+                    required
+                >
+
+
+                <label>Waste Category</label>
+
+                <select id="wasteType" required>
+
+                    <option value="">
+                        Select waste category
+                    </option>
+
+                    <option>Organic Waste</option>
+
+                    <option>Plastic Waste</option>
+
+                    <option>Paper Waste</option>
+
+                    <option>E-Waste</option>
+
+                    <option>Other</option>
+
+                </select>
+
+
+                <label>Waste Description</label>
+
+                <textarea
+                    id="description"
+                    placeholder="Describe your waste"
+                ></textarea>
+
+
+                <label>Pickup Address</label>
+
+                <textarea
+                    id="address"
+                    placeholder="Enter complete pickup address"
+                    required
+                ></textarea>
+
+
+                <label>Pickup Date</label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+
+                <label>Pickup Time</label>
+
+                <input
+                    type="time"
+                    id="time"
+                    required
+                >
+
+
+                <button type="submit">
+                    Submit Pickup Request
+                </button>
+
+            </form>
+
+
+            <!-- Success Message -->
+            <div id="successMessage"></div>
+
+
+            <!-- Eco Points -->
+            <div
+                id="ecoPointsBox"
+                style="
+                    margin-top: 25px;
+                    padding: 20px;
+                    background: #e8f5e9;
+                    border-radius: 12px;
+                    text-align: center;
+                    display: none;
+                "
+            >
+
+                <h3>🌱 Eco Points Earned</h3>
+
+                <p
+                    style="
+                        font-size: 30px;
+                        font-weight: bold;
+                        color: #2e7d32;
+                    "
+                >
+                    <span id="ecoPoints">0</span> Points
+                </p>
+
+                <p>
+                    Thank you for helping keep our environment clean! ♻️
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Track Request -->
+    <section id="track" class="track-section">
+
+        <h2>Track Your Request</h2>
+
+        <div class="tracking-box">
+
+            <input
+                type="text"
+                id="requestId"
+                placeholder="Enter Request ID"
+            >
+
+            <button onclick="trackRequest()">
+                Track Request
+            </button>
+
+            <p id="trackingResult"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 SmartWaste | Smart • Clean • Green ♻️
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
